@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
+<head>
         <title></title>
-    </head>
+</head>
 
-    <body>
+<body>
 
+<?php
+?>
         
-        
-    </body>
+</body>
 
 </html>
