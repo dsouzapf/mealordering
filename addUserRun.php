@@ -2,7 +2,7 @@
 <html>
 
 <head>
-        <title></title>
+        <title>Adding User...</title>
 </head>
 
 <body>

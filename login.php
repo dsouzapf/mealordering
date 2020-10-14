@@ -2,7 +2,7 @@
 <html>
 
     <head>
-        <title></title>
+        <title>Log In</title>
     </head>
 
     <body>

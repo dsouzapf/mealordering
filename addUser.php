@@ -7,10 +7,10 @@
 
     <body>
 
-        <form action="addUserRun.php">
+        <form action="addUserRun.php" method="post">
 
             Username:<input type="text" name="username"><br>
-            Initial Password:<input type="text" name="password"><br>
+            Initial Password Seed:<input type="number" name="password"><br>
 
             <input type="submit">
 
