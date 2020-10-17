@@ -41,8 +41,8 @@ $stmt = $connection->prepare(
 $stmt->bindParam(":username",
 $_POST["username"]);
 
-$stmt->bindParam(":password",
-generatePasswordFromSeed($_POST["password"]));
+$generatedPassword = generatePasswordFromSeed($_POST["password"]);
+$stmt->bindParam(":password", $generatedPassword);
 
 $stmt->execute();
 
