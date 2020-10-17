@@ -1,3 +1,4 @@
+<?php include_once("initSession") ?>
 <!DOCTYPE html>
 <html>
 
@@ -12,6 +13,8 @@
 array_map("htmlspecialchars", $_POST);
 
 include_once("connection.php");
+
+//TODO
 
 ?>
         
