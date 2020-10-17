@@ -7,7 +7,7 @@ $password="";
 
 try {
 
-    $connection = new PDO("mysql:host=$hostname;dbname=$dbname",
+    $connection = new PDO("mysql:host=$serverName;dbname=$dbname",
         $username,
         $password);
 
