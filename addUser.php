@@ -15,8 +15,8 @@
             && isset($_SESSION["lastUserPassword"])) {
 
                 echo("<p>Last User:</p>");
-                echo("<p>Username: $_SESSION[\"lastUserUsername\"]</p>");
-                echo("<p>Password: $_SESSION[\"lastUserPassword\"]</p>");
+                echo("<p>Username: " . $_SESSION["lastUserUsername"] . "</p>");
+                echo("<p>Password: " . $_SESSION["lastUserPassword"] . "</p>");
 
             }
             ?>
