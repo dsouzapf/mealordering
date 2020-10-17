@@ -22,7 +22,7 @@ $passwordSeed = $_POST["passwordSeed"];
 $stmt = $connection->prepare(
 "INSERT INTO users
 (userID,username,password) VALUES
-(null,:username,:password)"
+(null,:username,SHA1(:password))"
 );
 
 $stmt->bindParam(":username",
