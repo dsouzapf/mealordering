@@ -19,7 +19,7 @@ function generatePasswordFromSeed($seed) {
 
     $output = "";
 
-    for ($i = 0; $i < rand(3, 12); $i++) {
+    for ($i = 0; $i < 8; $i++) {
 
         $output .= chr(rand(65,122));
 
