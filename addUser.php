@@ -1,4 +1,4 @@
-<?php include_once("initSession") ?>
+<?php include_once("initSession.php") ?>
 <!DOCTYPE html>
 <html>
 
@@ -7,6 +7,21 @@
     </head>
 
     <body>
+
+        <div id="addUserLastUser">
+
+            <?php
+            if (isset($_SESSION["lastUserUsername"])
+            && isset($_SESSION["lastUserPassword"])) {
+
+                echo("<p>Last User:</p>");
+                echo("<p>Username: $_SESSION[\"lastUserUsername\"]</p>");
+                echo("<p>Password: $_SESSION[\"lastUserPassword\"]</p>");
+
+            }
+            ?>
+
+        </div>
 
         <form action="addUserRun.php" method="post">
 

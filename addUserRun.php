@@ -1,4 +1,4 @@
-<?php include_once("initSession") ?>
+<?php include_once("initSession.php") ?>
 <!DOCTYPE html>
 <html>
 
@@ -34,6 +34,9 @@ $stmt->bindParam(":password", $generatedPassword);
 $stmt->execute();
 
 $connection=null;
+
+$_SESSION["lastUserUsername"] = $_POST["username"];
+$_SESSION["lastUserPassword"] = $generatedPassword;
 
 header("Location: addUser.php");
 

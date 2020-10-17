@@ -1,4 +1,4 @@
-<?php include_once("initSession") ?>
+<?php include_once("initSession.php") ?>
 <!DOCTYPE html>
 <html>
 
