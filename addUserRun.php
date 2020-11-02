@@ -25,6 +25,8 @@ $stmt = $connection->prepare(
 (null,:username,SHA1(:password))"
 );
 
+//TODO: Don't add users with duplicate usernames
+
 $stmt->bindParam(":username",
 $_POST["username"]);
 
