@@ -10,9 +10,16 @@
 
     <head>
         <title>Log In</title>
+        <link rel="stylesheet" href="stylesheet.css">
     </head>
 
     <body>
+
+        <?php
+        if (isset($_SESSION["loginSucceed"]) && $_SESSION["loginSucceed"]) {
+            print("<p class=\"failedLoginSign\">Login Failed</p>");
+        }
+        ?>
 
         <form action="loginRun.php" method="POST">
 

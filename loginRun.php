@@ -21,12 +21,19 @@ $stmt->execute();
 $userObject = $stmt->fetch(PDO::FETCH_ASSOC);
 if (strcmp($userObject["password"], sha1($_POST["password"]))) {
 
+
+        $_SESSION["loginSucceed"] = true;
+
         $_SESSION["userID"] = $userObject["userID"];
         $_SESSION["username"] = $userObject["username"];
 
+        header("Location: index.php");
+
 } else {
 
-        //TODO
+        $_SESSION["loginSucceed"] = false;
+
+        header("Location: login.php");
 
 }
 
