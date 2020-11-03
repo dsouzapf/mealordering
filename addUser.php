@@ -9,7 +9,7 @@
 
     <body>
 
-        <div id="addUserLastUser">
+        <div id="addUserLastUser" class="lastUserAddedSign">
 
             <?php
             if (isset($_SESSION["lastUserUsername"])
