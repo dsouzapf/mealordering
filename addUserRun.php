@@ -19,21 +19,30 @@ include_once("passwordGeneration.php");
 $username = $_POST["username"];
 $passwordSeed = $_POST["passwordSeed"];
 
-$stmt = $connection->prepare(
+$getUsernamesStmt = $connnection->prepare("SELECT username FROM users WHERE username=:username");
+$getUsernamesStmt->bindParam(":username", $_POST["username"]);
+$getUsernamesStmt->execute();
+
+if ($_ = $addUserStmt->fetch(PDO::FETCH_ASSOC)) {
+        $_SESSION["addUserFailed"] = true;
+        header("Location: addUser.php");
+}
+
+$addUserStmt = $connection->prepare(
 "INSERT INTO users
-(userID,username,password) VALUES
-(null,:username,SHA1(:password))"
+(userID,username,password,role) VALUES
+(null,:username,SHA1(:password),:role)"
 );
 
-//TODO: Don't add users with duplicate usernames
-
-$stmt->bindParam(":username",
+$addUserStmt->bindParam(":username",
 $_POST["username"]);
 
 $generatedPassword = generatePasswordFromSeed($_POST["passwordSeed"]);
-$stmt->bindParam(":password", $generatedPassword);
+$addUserStmt->bindParam(":password", $generatedPassword);
 
-$stmt->execute();
+$addUserStmt->bindParam(":role", (int)$_POST["role"]);
+
+$addUserStmt->execute();
 
 $connection=null;
 

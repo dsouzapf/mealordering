@@ -3,12 +3,22 @@
 <html>
 
     <head>
-        <title></title>
+        <title>Meal Ordering</title>
         <link rel="stylesheet" href="stylesheet.css">
     </head>
 
     <body>
-        <h1></h1>
+        <?php
+
+        if (!isset($_SESSION["userID"])) {
+
+            header("Location: login.php");
+
+        }
+
+        switch ()
+
+        ?>
     </body>
 
 </html>

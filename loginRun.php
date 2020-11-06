@@ -18,6 +18,8 @@ $stmt = $connection->prepare("SELECT * FROM users WHERE username=:username;");
 $stmt->bindParam(":username", $_POST["username"]);
 $stmt->execute();
 
+$connection = null;
+
 $userObject = $stmt->fetch(PDO::FETCH_ASSOC);
 if (strcmp($userObject["password"], sha1($_POST["password"])) == 0) {
 
@@ -26,6 +28,7 @@ if (strcmp($userObject["password"], sha1($_POST["password"])) == 0) {
 
         $_SESSION["userID"] = $userObject["userID"];
         $_SESSION["username"] = $userObject["username"];
+        $_SESSION["userRole"] = $userObject["role"];
         
         header("Location: index.php");
 

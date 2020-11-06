@@ -17,7 +17,7 @@
 
         <?php
         if (isset($_SESSION["loginSucceed"]) && !$_SESSION["loginSucceed"]) {
-            print("<p class=\"failedLoginSign\">Login Failed</p>");
+            print("<p class=\"failedSign\">Login Failed</p>");
         }
         ?>
 
